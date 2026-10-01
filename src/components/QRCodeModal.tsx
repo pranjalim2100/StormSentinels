@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import QRCode from 'qrcode';
 import { QrCode, Download, Copy, Check, X, Smartphone, Presentation } from 'lucide-react';
 
@@ -16,7 +16,6 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({
   const [targetUrl, setTargetUrl] = useState<string>(defaultUrl);
   const [dataUrl, setDataUrl] = useState<string>('');
   const [copied, setCopied] = useState<boolean>(false);
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     if (isOpen) {
